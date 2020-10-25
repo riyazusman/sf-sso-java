@@ -7,6 +7,9 @@ if (cookies != null) {
    if (cookie.getName().equals("IDENTITY")) {
      identity = new Identity(cookie.getValue(),true);
     }
+	else if(cookie.getName().equals("RESPONSE"){
+		response = new String(cookie.getValue());
+	}
   }
 }
 
@@ -43,7 +46,7 @@ if (cookies != null) {
 </table>
 <br>
 
-<%=    identity.getEncodedResponse()%>
+<%= response %>
 
 
 <a href="/_saml?logout=true" class="button center">Logout</a>
