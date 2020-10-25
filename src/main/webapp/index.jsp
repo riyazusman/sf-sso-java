@@ -47,7 +47,7 @@ if (cookies != null) {
 </table>
 <br>
 
-<%= samlResponse %>
+<%= cookies %>
 
 
 <a href="/_saml?logout=true" class="button center">Logout</a>
