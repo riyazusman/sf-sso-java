@@ -44,9 +44,6 @@ if (cookies != null) {
 </table>
 <br>
 
-<%= identity.getSAMLResponse() %>
-
-
 <a href="/_saml?logout=true" class="button center">Logout</a>
 </center>
 <% } else {  %>
