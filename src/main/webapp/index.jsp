@@ -43,8 +43,7 @@ if (cookies != null) {
 </table>
 <br>
 
-<%    identity.getEncodedResponse();
-%>
+<%=    identity.getEncodedResponse()%>
 
 
 <a href="/_saml?logout=true" class="button center">Logout</a>
