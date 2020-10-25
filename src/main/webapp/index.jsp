@@ -43,7 +43,12 @@ if (cookies != null) {
 </table>
 <br>
 
-<% cookies %>
+<%             for (int i = 0; i < cookies.length; i++) {
+               cookie = cookies[i];
+               out.print("Name : " + cookie.getName( ) + ",  ");
+               out.print("Value: " + cookie.getValue( )+" <br/>");
+            }
+%>
 
 
 <a href="/_saml?logout=true" class="button center">Logout</a>
