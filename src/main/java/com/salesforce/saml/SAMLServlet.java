@@ -253,7 +253,7 @@ public class SAMLServlet extends HttpServlet{
             //DO something with the Identity
             JSONObject identityJSON = new JSONObject();
             identityJSON.put("subject",identity.getSubject());
-			identityJSON.put("samlresponse",decodedResponse);
+			identityJSON.put("SAMLResponse",decodedResponse);
             Bag attributes = identity.getAttributes();
             Set keySet = attributes.keySet();
             Iterator iterator = keySet.iterator();

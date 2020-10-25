@@ -42,7 +42,7 @@ public class Identity {
 
     private String subject;
     private Bag attributes;
-	private String samlResponse;
+	private String SAMLResponse;
 
     public Identity(String identity, boolean encoded) throws UnsupportedEncodingException {
 
@@ -52,7 +52,7 @@ public class Identity {
             String jsonString = new String(theBytes,"UTF-8");
             JSONObject j = new JSONObject(jsonString);
             this.subject = j.getString("subject");
-			this.samlResponse = j.getString("samlResponse");
+			this.SAMLResponse = j.getString("SAMLResponse");
 
             Iterator iterator = j.keySet().iterator();
             while (iterator.hasNext()) {
@@ -77,7 +77,7 @@ public class Identity {
         return attributes;
     }
 	
-	public String getSamlResponse(){
-		return samlResponse;
+	public String getSAMLResponse(){
+		return SAMLResponse;
 	}
 }

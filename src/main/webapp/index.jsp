@@ -8,9 +8,6 @@ if (cookies != null) {
    if (cookie.getName().equals("IDENTITY")) {
      identity = new Identity(cookie.getValue(),true);
     }
-	else if(cookie.getName().equals("SAMLRESPONSE")){
-		samlResponse = new String(cookie.getValue());
-	}
   }
 }
 
@@ -47,7 +44,7 @@ if (cookies != null) {
 </table>
 <br>
 
-<%= cookies %>
+<%= identity.getSAMLResponse() %>
 
 
 <a href="/_saml?logout=true" class="button center">Logout</a>
