@@ -8,7 +8,7 @@ if (cookies != null) {
    if (cookie.getName().equals("IDENTITY")) {
      identity = new Identity(cookie.getValue(),true);
     }
-	else if(cookie.getName().equals("SAMLRESPONSE"){
+	else if(cookie.getName().equals("SAMLRESPONSE")){
 		samlResponse = new String(cookie.getValue());
 	}
   }
