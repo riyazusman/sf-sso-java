@@ -43,12 +43,7 @@ if (cookies != null) {
 </table>
 <br>
 
-<%             Cookie cookie = null;
-			for (int i = 0; i < cookies.length; i++) {
-               cookie = cookies[i];
-               out.print("Name : " + cookie.getName( ) + ",  ");
-               out.print("Value: " + cookie.getValue( )+" <br/>");
-            }
+<%    identity.getEncodedResponse();
 %>
 
 
