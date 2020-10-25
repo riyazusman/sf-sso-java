@@ -1,14 +1,15 @@
 <%@ page import="com.salesforce.saml.Identity,com.salesforce.util.Bag,java.util.Set,java.util.Iterator,java.util.ArrayList" %>
 <%
 Identity identity = null;
+String samlResponse = null;
 Cookie[] cookies = request.getCookies();
 if (cookies != null) {
  for (Cookie cookie : cookies) {
    if (cookie.getName().equals("IDENTITY")) {
      identity = new Identity(cookie.getValue(),true);
     }
-	else if(cookie.getName().equals("RESPONSE"){
-		response = new String(cookie.getValue());
+	else if(cookie.getName().equals("SAMLRESPONSE"){
+		samlResponse = new String(cookie.getValue());
 	}
   }
 }
@@ -46,7 +47,7 @@ if (cookies != null) {
 </table>
 <br>
 
-<%= response %>
+<%= samlResponse %>
 
 
 <a href="/_saml?logout=true" class="button center">Logout</a>
