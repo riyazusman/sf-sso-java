@@ -253,6 +253,7 @@ public class SAMLServlet extends HttpServlet{
             //DO something with the Identity
             JSONObject identityJSON = new JSONObject();
             identityJSON.put("subject",identity.getSubject());
+			identityJSON.put("samlresponse",decodedResponse);
             Bag attributes = identity.getAttributes();
             Set keySet = attributes.keySet();
             Iterator iterator = keySet.iterator();
@@ -261,8 +262,6 @@ public class SAMLServlet extends HttpServlet{
                 identityJSON.put(key, (ArrayList<String>) attributes.getValues(key));
             }
             Cookie identityCookie = new Cookie("IDENTITY", Base64.encodeBase64URLSafeString(identityJSON.toString().getBytes("UTF-8")));
-			Cookie samlResponseCookie = new Cookie("SAMLRESPONSE", decodedResponse);
-			response.addCookie(samlResponseCookie);
             response.addCookie(identityCookie);
         } catch (Exception e) {
             response.sendError(401, "Access Denied: " + e.getMessage());

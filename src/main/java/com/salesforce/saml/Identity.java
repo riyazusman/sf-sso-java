@@ -42,17 +42,17 @@ public class Identity {
 
     private String subject;
     private Bag attributes;
-	private String encodedResponse;
+	private String samlResponse;
 
     public Identity(String identity, boolean encoded) throws UnsupportedEncodingException {
 
         this.attributes = new Bag();
-		this.encodedResponse="Test";
         if (encoded) {
             byte[] theBytes = Base64.decodeBase64(identity);
             String jsonString = new String(theBytes,"UTF-8");
             JSONObject j = new JSONObject(jsonString);
             this.subject = j.getString("subject");
+			this.samlResponse = j.getString("samlResponse");
 
             Iterator iterator = j.keySet().iterator();
             while (iterator.hasNext()) {
@@ -77,7 +77,7 @@ public class Identity {
         return attributes;
     }
 	
-	public String getEncodedResponse(){
-		return encodedResponse;
+	public String getSamlResponse(){
+		return samlResponse;
 	}
 }
