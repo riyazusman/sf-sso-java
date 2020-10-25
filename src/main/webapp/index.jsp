@@ -42,6 +42,10 @@ if (cookies != null) {
 %>
 </table>
 <br>
+
+<% cookies %>
+
+
 <a href="/_saml?logout=true" class="button center">Logout</a>
 </center>
 <% } else {  %>
